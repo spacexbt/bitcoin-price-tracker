@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bitcoin Price Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Bitcoin Price Tracker</h1>
+        <div class="price-container">
+            <div id="price">Loading...</div>
+            <div id="price-change"></div>
+        </div>
+        <div id="timestamp"></div>
+        
+        <div class="stats-container">
+            <div class="stat">
+                <label>24h High</label>
+                <span id="high-price">-</span>
+            </div>
+            <div class="stat">
+                <label>24h Low</label>
+                <span id="low-price">-</span>
+            </div>
+            <div class="stat">
+                <label>24h Change</label>
+                <span id="day-change">-</span>
+            </div>
+        </div>
+
+        <div class="chart-container">
+            <canvas id="priceChart"></canvas>
+        </div>
+
+        <div class="settings">
+            <h3>Price Alerts</h3>
+            <div class="alert-settings">
+                <input type="number" id="alertPrice" placeholder="Alert price in USD">
+                <button onclick="tracker.setAlert()">Set Alert</button>
+            </div>
+        </div>
+    </div>
+    <script src="tracker.js"></script>
+</body>
+</html>
